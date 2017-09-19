@@ -40,6 +40,7 @@ import android.widget.Toast;
 
 
 import com.frame.redmaple.R;
+import com.frame.redmaple.base.wsdl.IConstants;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -335,7 +336,7 @@ public class CommonActivity extends Activity {
     public void exit(final Context context, String str) {
         final Dialog Dialog = new Dialog(context, android.R.style.Theme_Translucent_NoTitleBar);
         Dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        Dialog.setContentView(R.layout.kdempty_dialog);
+        Dialog.setContentView(R.layout.rmempty_dialog);
         TextView Tv_confirm = (TextView) Dialog.findViewById(R.id.tv_confirm);// 确认按钮
         Tv_confirm.setText("重新登录");
         TextView Tv_cancel = (TextView) Dialog.findViewById(R.id.tv_cancel);// 取消按钮
