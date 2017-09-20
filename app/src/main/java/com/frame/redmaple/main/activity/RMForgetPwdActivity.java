@@ -23,8 +23,6 @@ public class RMForgetPwdActivity extends CommonActivity {
 
     private int recLen = COUNT_DOWN; // 倒计时
     private Context context = RMForgetPwdActivity.this;
-    //    private KDForgetPwdBean forgetPwdBean;
-//    private KDForgetPwdCodeBean kdForgetPwdCodeBean;
     private String userId, phoneId, password, code;//账号,手机设备码,密码,验证码
     private EditText Ed_userId, Ed_passWord, Ed_code;
     private TextView Tv_submit, Tv_send_code;//修改按钮,发送验证码按钮
@@ -125,77 +123,4 @@ public class RMForgetPwdActivity extends CommonActivity {
             super.handleMessage(msg);
         }
     };
-
-//    Runnable runnable = new Runnable() {
-//
-//        @Override
-//        public void run() {
-//            Message message=new Message();
-//            switch (status) {
-//                case R.id.tv_submit:// 修改按钮
-//                    try {
-//                        forgetPwdBean = wsdl.forgetPwd(userId, phoneId,password, code);
-//                    } catch (ConnectException e) {
-//                        Log.i(IConstants.FORGETPWD, e.getMessage());
-//                    }
-//                    break;
-//                case R.id.tv_send_code:// 发送验证码按钮
-//                    try {
-//                        kdForgetPwdCodeBean = wsdl.sendCode(userId,phoneId);
-//                    } catch (ConnectException e) {
-//                        Log.i(IConstants.SENDCODE03, e.getMessage());
-//                    }
-//                    break;
-//                default:
-//                    break;
-//            }
-//            loadingmhandler.sendMessage(message);
-//        }
-//    };
-//
-//    Handler loadingmhandler = new Handler() {
-//        @Override
-//        public void handleMessage(Message msg) {
-//            try {
-//                dismiss(context);
-//                switch (status) {
-//                    case R.id.tv_submit:// 修改按钮
-//                        if (IConstants.STR_ZERO.equals(forgetPwdBean.getStateCode())) {
-//                            ToastUtil3.showToast(context, "修改成功！");
-//                            SharedPreferences sharedPreferences = getSharedPreferences(IConstants.USER_INFO,Context.MODE_APPEND);
-//                            SharedPreferences.Editor editor = sharedPreferences.edit();
-//                            editor.putString("passWord", "");
-//                            editor.putBoolean("checkbox", false);
-//                            editor.commit();
-//                            finish();
-//                        }else if(IConstants.STR_TWO.equals(forgetPwdBean.getStateCode())){
-//                            exit(context, getString(R.string.otherDeviceLogin));
-//                        }else if(IConstants.STR_THREE.equals(forgetPwdBean.getStateCode())){
-//                            exit(context, forgetPwdBean.getStateMsg());
-//                        }else {
-//                            ToastUtil3.showToast(context, forgetPwdBean.getStateMsg());
-//                        }
-//                        break;
-//                    case R.id.tv_send_code:// 发送验证码按钮
-//                        if (IConstants.STR_ZERO.equals(kdForgetPwdCodeBean.getStateCode())) {
-//                            Tv_send_code.setClickable(false); // 按钮不可用
-//                            Message message = handler.obtainMessage(1); // 倒计时开始
-//                            handler.sendMessageDelayed(message, 1000); // 间隔1秒钟
-//                            ToastUtil3.showToast(context, "发送成功！");
-//                        }else if(IConstants.STR_TWO.equals(kdForgetPwdCodeBean.getStateCode())){
-//                            exit(context, getString(R.string.otherDeviceLogin));
-//                        }else if(IConstants.STR_THREE.equals(kdForgetPwdCodeBean.getStateCode())){
-//                            exit(context, kdForgetPwdCodeBean.getStateMsg());
-//                        }else {
-//                            ToastUtil3.showToast(context, kdForgetPwdCodeBean.getStateMsg());
-//                        }
-//                        break;
-//                    default:
-//                        break;
-//                }
-//            } catch (Exception ex) {
-//                Log.i(IConstants.FORGETPWD, ex.getMessage());
-//            }
-//        }
-//    };
 }

@@ -24,8 +24,6 @@ public class RMRegisterActivity extends CommonActivity {
 
     private int recLen = COUNT_DOWN; // 倒计时
     private Context context = RMRegisterActivity.this;
-    //    private KDRegisterBean kdRegisterBean;
-//    private KDRegisterCodeBean kdRegisterCodeBean;
     private String userId, phoneId, mobile, password, code;//账号, 手机设备码, 手机号, 密码, 验证码;
     private EditText Ed_userId, Ed_mobile, Ed_passWord, Ed_code;
     private TextView Tv_submit, Tv_send_code;//注册按钮,发送验证按钮
@@ -35,7 +33,6 @@ public class RMRegisterActivity extends CommonActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.rmregister);
-//        phoneId = ((TelephonyManager) getSystemService(TELEPHONY_SERVICE)).getDeviceId();
         initView();
         AbViewUtil.scaleContentView((LinearLayout) findViewById(R.id.rootLayout));
     }
@@ -152,55 +149,19 @@ public class RMRegisterActivity extends CommonActivity {
             switch (status) {
                 case R.id.tv_submit://提交按钮
                     try {
-//                        kdRegisterBean = wsdl.register(userId, phoneId, mobile, password, code);
                     } catch (Exception e) {
-//                        Log.i(IConstants.REGISTER, e.getMessage());
                     }
                     break;
                 case R.id.tv_send_code:
                     try {
-//                        kdRegisterCodeBean = wsdl.sendCode04(mobile, phoneId);
                     } catch (Exception e) {
-//                        Log.i(IConstants.SENDCODE04, e.getMessage());
                     }
                     break;
                 default:
                     break;
             }
-//            loadingmhandler.sendMessage(message);
         }
     };
 
-//    Handler loadingmhandler = new Handler() {
-//        @Override
-//        public void handleMessage(Message msg) {
-//            try {
-//                dismiss(context);
-//                switch (status) {
-//                    case R.id.tv_submit://提交按钮
-//                        if (IConstants.STR_ZERO.equals(kdRegisterBean.getStateCode())) {
-//                            ToastUtil3.showToast(context, "注册成功！");
-//                            finish();
-//                        }else{
-//                            ToastUtil3.showToast(context, kdRegisterBean.getStateMsg());
-//                        }
-//                        break;
-//                    case R.id.tv_send_code:
-//                        if (IConstants.STR_ZERO.equals(kdRegisterCodeBean.getStateCode())) {
-//                            ToastUtil3.showToast(context, "发送成功！");
-//                            Tv_send_code.setClickable(false); // 按钮不可用
-//                            Message message = handler.obtainMessage(1); // 倒计时开始
-//                            handler.sendMessageDelayed(message, 1000); // 间隔1秒钟
-//                        }else{
-//                            ToastUtil3.showToast(context, kdRegisterBean.getStateMsg());
-//                        }
-//                        break;
-//                    default:
-//                        break;
-//                }
-//            } catch (Exception ex) {
-//                Log.i(IConstants.REGISTER, ex.getMessage());
-//            }
-//        }
-//    };
+
 }
