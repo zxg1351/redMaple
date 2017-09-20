@@ -4,25 +4,16 @@ import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.Dialog;
-import android.content.ComponentName;
-import android.content.ContentValues;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnKeyListener;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
-import android.graphics.Bitmap;
 import android.hardware.Camera;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.net.Uri;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
-import android.os.Build;
 import android.os.Environment;
 import android.os.IBinder;
 import android.support.v4.app.ActivityCompat;
@@ -34,13 +25,14 @@ import android.view.View.OnClickListener;
 import android.view.Window;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 
 import com.frame.redmaple.R;
+import com.frame.redmaple.base.util.CustomProgressDialog;
 import com.frame.redmaple.base.wsdl.IConstants;
+import com.frame.redmaple.main.activity.RMLoginActivity;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -345,7 +337,7 @@ public class CommonActivity extends Activity {
         Tv_message.setText(str);
         Dialog.setOnKeyListener(keylistener);
         Dialog.setCancelable(false);
-        AbViewUtil.scaleContentView((LinearLayout) Dialog.findViewById(R.id.rootLayout));
+//        AbViewUtil.scaleContentView((LinearLayout) Dialog.findViewById(R.id.rootLayout));
         Dialog.show();
         Tv_confirm.setOnClickListener(new OnClickListener() {// 确认按钮
 
@@ -355,7 +347,7 @@ public class CommonActivity extends Activity {
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.putBoolean("login", false);// 判断是否登录过
                 editor.commit();
-                Intent intent = new Intent(context, KDLogin.class);
+                Intent intent = new Intent(context, RMLoginActivity.class);
                 startActivity(intent);
                 for (Activity activity : activitylist) {
                     if (!activity.isFinishing()) {

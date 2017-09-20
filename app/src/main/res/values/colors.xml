@@ -5,4 +5,29 @@
     <color name="colorAccent">#FF4081</color>
 
     <color name="Hb0000000">#b0000000</color>
+
+
+    <color name="HFFFFFF">#FFFFFF</color>
+    <color name="Hc7c7c7">#c7c7c7</color>
+    <color name="He3edf3">#e3edf3</color>
+    <color name="H6e6e6e">#6e6e6e</color>
+    <color name="Hf10e50">#f10e50</color>
+    <color name="H5883f0">#5883f0</color>
+    <color name="Hbdbdbd">#bdbdbd</color>
+    <color name="Hf0f0f0">#f0f0f0</color>
+    <color name="Heff4f7">#eff4f7</color>
+    <color name="Hf8245c">#f8245c</color>
+    <color name="Hff2323">#ff2323</color>
+    <color name="Hdddddd">#dddddd</color>
+    <color name="H5a5a5a">#5a5a5a</color>
+    <color name="Hfc2727">#fc2727</color>
+    <color name="Hefefef">#efefef</color>
+    <color name="H485865">#485865</color>
+    <color name="H8a8a8a">#8a8a8a</color>
+    <color name="HFF0000">#FF0000</color>
+    <color name="Hf4f4f4">#f4f4f4</color>
+    <color name="H007aff">#007aff</color>
+    <color name="H000000">#000000</color>
+    <color name="H969696">#969696</color>
+    <color name="H999999">#999999</color>
 </resources>

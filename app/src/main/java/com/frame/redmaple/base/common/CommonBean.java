@@ -10,7 +10,6 @@ import lombok.Data;
 @Data
 public class CommonBean implements Serializable {
 
-    private static final long serialVersionUID = 1L;
     private String stateCode;// 接口返回状态
     private String stateMsg;// 接口返回消息
     private String phoneId;// 手机唯一标识

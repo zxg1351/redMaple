@@ -30,4 +30,6 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'org.projectlombok:lombok:1.16.18'
     compile files('libs/commons-codec-1.10.jar')
+    compile 'org.glassfish:javax.annotation:10.0-b28'
+    compile files('libs/adaptation.jar')
 }

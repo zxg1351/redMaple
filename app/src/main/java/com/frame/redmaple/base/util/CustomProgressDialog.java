@@ -10,7 +10,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.example.yaguit.AbViewUtil;
 import com.frame.redmaple.R;
 
 /**
@@ -37,7 +36,7 @@ public class CustomProgressDialog extends Dialog {
 		customProgressDialog.setCanceledOnTouchOutside(false);
 		customProgressDialog.setOnKeyListener(keylistener);  
 		customProgressDialog.setCancelable(false);  
-		AbViewUtil.scaleContentView((LinearLayout) customProgressDialog.findViewById(R.id.rootLayout));
+//		AbViewUtil.scaleContentView((LinearLayout) customProgressDialog.findViewById(R.id.rootLayout));
 		return customProgressDialog;
 	}
 	private static OnKeyListener keylistener = new DialogInterface.OnKeyListener() {

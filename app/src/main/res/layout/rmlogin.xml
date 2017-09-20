@@ -31,7 +31,7 @@
                     android:layout_width="@dimen/H49px"
                     android:layout_height="@dimen/H43px"
                     android:layout_marginLeft="@dimen/H20px"
-                    android:background="@drawable/ic_logo" />
+                    android:background="@mipmap/ic_logo" />
             </LinearLayout>
 
             <LinearLayout
@@ -92,7 +92,7 @@
                     <ImageView
                         android:layout_width="@dimen/H30px"
                         android:layout_height="@dimen/H39px"
-                        android:background="@drawable/ic_people" />
+                        android:background="@mipmap/ic_people" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -100,7 +100,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1" >
 
-                    <com.kingdun.alarmdevice.base.util.EditTextContent
+                    <EditText
                         android:id="@+id/ed_userId"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -135,7 +135,7 @@
                     <ImageView
                         android:layout_width="@dimen/H30px"
                         android:layout_height="@dimen/H39px"
-                        android:background="@drawable/ic_lock" />
+                        android:background="@mipmap/ic_lock" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -143,7 +143,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="2" >
 
-                    <com.kingdun.alarmdevice.base.util.EditTextContent
+                    <EditText
                         android:id="@+id/ed_passWord"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"

@@ -5,8 +5,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.View;
@@ -18,8 +16,10 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 
+import com.example.yaguit.AbViewUtil;
 import com.frame.redmaple.R;
 import com.frame.redmaple.base.common.CommonActivity;
+import com.frame.redmaple.base.util.Base64Util;
 import com.frame.redmaple.base.wsdl.IConstants;
 
 import java.util.Calendar;
@@ -32,21 +32,21 @@ import java.util.Calendar;
  */
 
 @SuppressLint("HandlerLeak")
-public class RMLogin extends CommonActivity {
-    public Context context = RMLogin.this;
-    private RMLoginBean RMLoginBean;
+public class RMLoginActivity extends CommonActivity {
+    public Context context = RMLoginActivity.this;
+    //    private RMLoginBean RMLoginBean;
     private EditText Ed_userId, Ed_passWord;//账号，密码
     private String userId, phoneId, passWord, clientId;//账号，手机id，密码,个推id
     private CheckBox checkbox;//记住密码按钮
-    public static RMLogin RMLogin = null;
+    public static RMLoginActivity RMLogin = null;
     private View Lyt_colseWxLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.rmlogin);
-        RMLogin = RMLogin.this;
-        activitylist.add(RMLogin.this);
+        RMLogin = RMLoginActivity.this;
+        activitylist.add(RMLoginActivity.this);
         initView();
         AbViewUtil.scaleContentView((LinearLayout) findViewById(R.id.rootLayout));
     }
@@ -88,7 +88,7 @@ public class RMLogin extends CommonActivity {
                 case R.id.tv_login://登录按钮
                     if (isNetworkAvailable(context)) {
                         userId = Ed_userId.getText().toString().trim();
-                        phoneId = ((TelephonyManager) getSystemService(TELEPHONY_SERVICE)).getDeviceId();
+//                        phoneId = ((TelephonyManager) getSystemService(TELEPHONY_SERVICE)).getDeviceId();
                         passWord = Base64Util.encode(Ed_passWord.getText().toString().trim());
                         if (isEmpty(userId)) {
                             ToastUtil3.showToast(context, "请输入用户名！");
@@ -99,14 +99,14 @@ public class RMLogin extends CommonActivity {
                             return;
                         }
                         loading(context);
-                        new Thread(runnable).start();
+//                        new Thread(runnable).start();
                     } else {
                         ToastUtil3.showToast(context, getString(R.string.net_off));
                     }
                     break;
                 case R.id.lyt_forget_wd://忘记密码按钮
                     if (isNetworkAvailable(context)) {
-                        Intent intent = new Intent(RMLogin.this, KDForgetPwd.class);
+                        Intent intent = new Intent(RMLoginActivity.this, RMForgetPwdActivity.class);
                         startActivity(intent);
                     } else {
                         ToastUtil3.showToast(context, getString(R.string.net_off));
@@ -114,7 +114,7 @@ public class RMLogin extends CommonActivity {
                     break;
                 case R.id.tv_register://注册按钮
                     if (isNetworkAvailable(context)) {
-                        Intent intent = new Intent(RMLogin.this, KDRegister.class);
+                        Intent intent = new Intent(RMLoginActivity.this, RMRegisterActivity.class);
                         startActivity(intent);
                     } else {
                         ToastUtil3.showToast(context, getString(R.string.net_off));
@@ -141,50 +141,50 @@ public class RMLogin extends CommonActivity {
         }
     };
 
-    Runnable runnable = new Runnable() {
-        @Override
-        public void run() {
-            Message message = new Message();
-            try {
-                RMLoginBean = wsdl.login(userId, phoneId, passWord, clientId, "1");
-                loadingmhandler.sendMessage(message);
-            } catch (Exception e) {
-                Log.i(IConstants.LOGIN, e.getMessage());
-            }
-        }
-    };
-
-    Handler loadingmhandler = new Handler() {
-        @Override
-        public void handleMessage(Message msg) {
-            try {
-                dismiss(context);
-                if (IConstants.STR_ZERO.equals(RMLoginBean.getStateCode())) {
-                    SharedPreferences sharedPreferences = getSharedPreferences(IConstants.USER_INFO, Context.MODE_APPEND);
-                    if (!userId.equals(sharedPreferences.getString("userId", null))) {// 如果本地登录不是上一次的账号那么情况本地消息
-                        clearMessage();
-                    }
-                    SharedPreferences.Editor editor = sharedPreferences.edit();
-                    editor.putString("userId", userId);
-                    editor.putString("phoneId", phoneId);
-                    editor.putString("id", RMLoginBean.getAppData().getId());
-                    editor.putString("passWord", Base64Util.decode(passWord));
-                    editor.putString("roleCode", RMLoginBean.getAppData().getRoleCode());// 用户权限
-                    editor.putBoolean("checkbox", checkbox.isChecked());
-                    editor.putBoolean("wxLogin", false);// 微信登录
-                    editor.putBoolean("login", true);// 判断是否登录过
-                    editor.commit();
-                    Intent intent = new Intent(context, KDDevice.class);
-                    finish();
-                    startActivity(intent);
-                } else {
-                    ToastUtil3.showToast(context, RMLoginBean.getStateMsg());
-                }
-            } catch (Exception ex) {
-                Log.i(IConstants.LOGIN, ex.getMessage());
-            }
-        }
-    };
+//    Runnable runnable = new Runnable() {
+//        @Override
+//        public void run() {
+//            Message message = new Message();
+//            try {
+//                RMLoginBean = wsdl.login(userId, phoneId, passWord, clientId, "1");
+//                loadingmhandler.sendMessage(message);
+//            } catch (Exception e) {
+//                Log.i(IConstants.LOGIN, e.getMessage());
+//            }
+//        }
+//    };
+//
+//    Handler loadingmhandler = new Handler() {
+//        @Override
+//        public void handleMessage(Message msg) {
+//            try {
+//                dismiss(context);
+//                if (IConstants.STR_ZERO.equals(RMLoginBean.getStateCode())) {
+//                    SharedPreferences sharedPreferences = getSharedPreferences(IConstants.USER_INFO, Context.MODE_APPEND);
+//                    if (!userId.equals(sharedPreferences.getString("userId", null))) {// 如果本地登录不是上一次的账号那么情况本地消息
+//                        clearMessage();
+//                    }
+//                    SharedPreferences.Editor editor = sharedPreferences.edit();
+//                    editor.putString("userId", userId);
+//                    editor.putString("phoneId", phoneId);
+//                    editor.putString("id", RMLoginBean.getAppData().getId());
+//                    editor.putString("passWord", Base64Util.decode(passWord));
+//                    editor.putString("roleCode", RMLoginBean.getAppData().getRoleCode());// 用户权限
+//                    editor.putBoolean("checkbox", checkbox.isChecked());
+//                    editor.putBoolean("wxLogin", false);// 微信登录
+//                    editor.putBoolean("login", true);// 判断是否登录过
+//                    editor.commit();
+//                    Intent intent = new Intent(context, KDDevice.class);
+//                    finish();
+//                    startActivity(intent);
+//                } else {
+//                    ToastUtil3.showToast(context, RMLoginBean.getStateMsg());
+//                }
+//            } catch (Exception ex) {
+//                Log.i(IConstants.LOGIN, ex.getMessage());
+//            }
+//        }
+//    };
 
     /**
      * 如果本次登录账号与上次不同，则清空本地消息
