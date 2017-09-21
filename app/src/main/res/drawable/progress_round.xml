@@ -8,8 +8,4 @@
     <item android:drawable="@mipmap/ic_progress4" android:duration="100"/>
     <item android:drawable="@mipmap/ic_progress5" android:duration="100"/>
     <item android:drawable="@mipmap/ic_progress6" android:duration="100"/>
-    <item android:drawable="@mipmap/ic_progress7" android:duration="100"/>
-    <item android:drawable="@mipmap/ic_progress8" android:duration="100"/>
-    <item android:drawable="@mipmap/ic_progress9" android:duration="100"/>
-    <item android:drawable="@mipmap/ic_progress10" android:duration="100"/>
-</animation-list>   
+</animation-list>

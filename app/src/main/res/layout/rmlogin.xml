@@ -31,7 +31,7 @@
                     android:layout_width="@dimen/H49px"
                     android:layout_height="@dimen/H43px"
                     android:layout_marginLeft="@dimen/H20px"
-                    android:background="@mipmap/ic_logo" />
+                    android:background="@mipmap/ic_add" />
             </LinearLayout>
 
             <LinearLayout
@@ -274,7 +274,7 @@
                 android:id="@+id/iv_wxLogin"
                 android:layout_width="@dimen/H108px"
                 android:layout_height="@dimen/H108px"
-                android:background="@drawable/btn_login_wx" />
+                android:background="@mipmap/ic_launcher" />
 
             <TextView
                 android:layout_width="wrap_content"
