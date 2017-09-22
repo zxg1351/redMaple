@@ -93,6 +93,8 @@ public class RMLoginActivity extends CommonActivity {
                             ToastUtil3.showToast(context, "请输入密码！");
                             return;
                         }
+                        Intent intent = new Intent(RMLoginActivity.this, RMHomeActivity.class);
+                        startActivity(intent);
                         loading(context);
                     } else {
                         ToastUtil3.showToast(context, getString(R.string.net_off));

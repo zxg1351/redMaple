@@ -36,6 +36,7 @@
             android:screenOrientation="portrait"></activity>
         <activity
             android:name=".main.activity.RMHomeActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:screenOrientation="portrait"></activity>
         <activity
             android:name=".main.activity.RMRegisterActivity"

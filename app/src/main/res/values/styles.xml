@@ -1,19 +1,56 @@
 <resources>
 
-    <style name="AppBaseTheme" parent="android:Theme.Light"></style>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="BaseAPPThemeLight">
+
+    </style>
+
+    <style name="AppThemeNight" parent="BaseAPPThemeNight">
+
+    </style>
+    <!--白天-->
+    <style name="BaseAPPThemeLight" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="textLight">@color/colorPrimaryNight</item>
+        <item name="appBg">@color/bg_gray</item>
+        <item name="textNight">@color/gray</item>
+    </style>
+    <!--黑夜主题-->
+    <style name="BaseAPPThemeNight" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimaryNight</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkNight</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="textLight">@android:color/white</item>
+        <item name="appBg">@color/colorPrimaryDarkNight</item>
+        <item name="textNight">@color/gray</item>
+    </style>
+
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+
+    </style>
 
     <!-- CustomCheckBox theme -->
     <style name="CustomCheckBoxTheme" parent="@android:style/Widget.CompoundButton.CheckBox">
         <item name="android:button">@drawable/bac_checkbox</item>
     </style>
 
-    <style name="kd004BoxTheme" parent="@android:style/Widget.CompoundButton.CheckBox">
-        <item name="android:button">@drawable/bac_kd004checkbox</item>
-    </style>
+    <!--<style name="CustomCheckBoxTheme1" parent="@android:style/Widget.CompoundButton.CheckBox">-->
+        <!--<item name="android:button">@drawable/bac_checkbox1</item>-->
+    <!--</style>-->
+    <!--<style name="kd004BoxTheme" parent="@android:style/Widget.CompoundButton.CheckBox">-->
+    <!--<item name="android:button">@drawable/bac_kd004checkbox</item>-->
+    <!--</style>-->
 
-    <style name="BoxTheme" parent="@android:style/Widget.CompoundButton.CheckBox">
-        <item name="android:button">@drawable/bac_checkboxdevice</item>
-    </style>
+    <!--<style name="BoxTheme" parent="@android:style/Widget.CompoundButton.CheckBox">-->
+    <!--<item name="android:button">@drawable/bac_checkboxdevice</item>-->
+    <!--</style>-->
 
     <style name="CustomDialog" parent="@android:style/Theme.Dialog">
         <item name="android:windowFrame">@null</item>
@@ -38,21 +75,37 @@
         <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
         <item name="android:backgroundDimEnabled">true</item>
     </style>
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+
+    <style name="StyleProgressBarMini" parent="@android:style/Widget.ProgressBar.Horizontal">
+        <item name="android:maxHeight">50dip</item>
+        <item name="android:minHeight">10dip</item>
+        <item name="android:indeterminateOnly">false</item>
+        <item name="android:indeterminateDrawable">
+            @android:drawable/progress_indeterminate_horizontal
+        </item>
+        <item name="android:progressDrawable">@drawable/shape_progressbar_mini</item>
+    </style>
+    <style name="StyleProgressBarAnother" parent="@android:style/Widget.ProgressBar.Horizontal">
+        <item name="android:maxHeight">50dip</item>
+        <item name="android:minHeight">10dip</item>
+        <item name="android:indeterminateOnly">false</item>
+        <item name="android:indeterminateDrawable">
+            @android:drawable/progress_indeterminate_horizontal
+        </item>
+        <item name="android:progressDrawable">@drawable/shape_progressbar_anthoer</item>
     </style>
 
-    <style name="AppTheme.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
+    <style name="Dialog" parent="android:style/Theme.Dialog">
+        <!-- 第一个是dialog的背景色，当然你可以设置图片，不拦大家 -->
+        <!--<item name="android:background">@color/white</item>-->
+        <!-- 第二个就是弹出dialog后，下面的activity层的颜色啦-->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!--这里设置为没有标题栏，如果这里不设置的话，你会发现无论布局怎么改都会出现多一栏白色 -->
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFrame">@null</item><!--边框-->
     </style>
 
-    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
-
-    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
-
+    <style name="CustomCheckboxTheme" parent="@android:style/Widget.CompoundButton.CheckBox">
+        <item name="android:button">@drawable/checkbox_style</item>
+    </style>
 </resources>

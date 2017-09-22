@@ -32,7 +32,7 @@ public class RMForgetPwdActivity extends CommonActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.rmforgetpwd);
-        phoneId = ((TelephonyManager) getSystemService(TELEPHONY_SERVICE)).getDeviceId();
+//        phoneId = ((TelephonyManager) getSystemService(TELEPHONY_SERVICE)).getDeviceId();
         initView();
         activitylist.add(RMForgetPwdActivity.this);
         AbViewUtil.scaleContentView((LinearLayout) findViewById(R.id.rootLayout));

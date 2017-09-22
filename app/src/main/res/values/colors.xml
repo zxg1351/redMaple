@@ -30,4 +30,10 @@
     <color name="H000000">#000000</color>
     <color name="H969696">#969696</color>
     <color name="H999999">#999999</color>
+
+    <color name="titel_color">#48B1E0</color>
+    <color name="gray">#AAAAAA</color>
+    <color name="colorPrimaryNight">#1A1A1B</color>
+    <color name="colorPrimaryDarkNight">#1E1F21</color>
+    <color name="bg_gray">#F3F3F4</color>
 </resources>
