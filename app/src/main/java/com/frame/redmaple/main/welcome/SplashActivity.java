@@ -17,8 +17,8 @@ import com.frame.redmaple.R;
 import com.frame.redmaple.base.common.CommonActivity;
 import com.frame.redmaple.base.util.SysApplication;
 import com.frame.redmaple.base.wsdl.IConstants;
-import com.frame.redmaple.main.activity.RMHomeActivity;
 import com.frame.redmaple.main.activity.RMLoginActivity;
+import com.frame.redmaple.main.activity.RMHomeActivity;
 
 
 /**

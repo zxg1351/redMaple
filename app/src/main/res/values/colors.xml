@@ -5,7 +5,7 @@
     <color name="colorAccent">#FF4081</color>
 
     <color name="Hb0000000">#b0000000</color>
-
+    <color name="H2e2e2e">#2e2e2e</color>
 
     <color name="HFFFFFF">#FFFFFF</color>
     <color name="Hc7c7c7">#c7c7c7</color>
@@ -36,4 +36,13 @@
     <color name="colorPrimaryNight">#1A1A1B</color>
     <color name="colorPrimaryDarkNight">#1E1F21</color>
     <color name="bg_gray">#F3F3F4</color>
+    <color name="white">#ffffff</color>
+    <!--深灰色-->
+    <color name="K656565">#656565</color>
+    <!--提示文字色   更浅的灰色-->
+    <color name="Kdedede">#dedede</color>
+
+    <color name="HE25E26">#E25E26</color>
+    <!--浅灰色-->
+    <color name="K929292">#929292</color>
 </resources>

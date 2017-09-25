@@ -1,0 +1,405 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.frame.redmaple.main.fragment.Fragment_Me">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/include_head_text_noback" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/ll_diary"
+                        android:layout_width="match_parent"
+                        android:layout_height="90px"
+                        android:layout_marginTop="@dimen/H20px"
+                        android:background="@color/white"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="@dimen/H0px"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="33px"
+                            android:layout_weight="1"
+                            android:gravity="center|left"
+                            android:orientation="horizontal">
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/H33px"
+                                android:text="日记"
+                                android:textColor="@color/H2e2e2e"
+                                android:textSize="34px" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="@dimen/H0px"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="@dimen/H40px"
+                            android:layout_weight="1"
+                            android:gravity="center|right">
+
+                            <ImageView
+                                android:id="@+id/imageView1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@mipmap/icon_next_arrow" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/ll_collection"
+                        android:layout_width="match_parent"
+                        android:layout_height="90px"
+                        android:layout_marginTop="@dimen/H20px"
+                        android:background="@color/white"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="@dimen/H0px"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="33px"
+                            android:layout_weight="1"
+                            android:gravity="center|left"
+                            android:orientation="horizontal">
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/H33px"
+                                android:text="我的收藏"
+                                android:textColor="@color/H2e2e2e"
+                                android:textSize="34px" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="@dimen/H0px"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="@dimen/H40px"
+                            android:layout_weight="1"
+                            android:gravity="center|right">
+
+                            <ImageView
+                                android:id="@+id/imageView2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@mipmap/icon_next_arrow" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/ll_purchase"
+                        android:layout_width="match_parent"
+                        android:layout_height="90px"
+                        android:layout_marginTop="@dimen/H20px"
+                        android:background="@color/white"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="@dimen/H0px"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="33px"
+                            android:layout_weight="1"
+                            android:gravity="center|left"
+                            android:orientation="horizontal">
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/H33px"
+                                android:text="购物车"
+                                android:textColor="@color/H2e2e2e"
+                                android:textSize="34px" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="@dimen/H0px"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="@dimen/H40px"
+                            android:layout_weight="1"
+                            android:gravity="center|right">
+
+                            <ImageView
+                                android:id="@+id/imageView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@mipmap/icon_next_arrow" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+
+                    <LinearLayout
+                        android:id="@+id/ll_myOrder"
+                        android:layout_width="match_parent"
+                        android:layout_height="90px"
+                        android:layout_marginTop="@dimen/H20px"
+                        android:background="@color/white"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="@dimen/H0px"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/H33px"
+                            android:layout_weight="1"
+                            android:gravity="center|left"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/H33px"
+                                android:text="我的订单"
+                                android:textColor="@color/H2e2e2e"
+                                android:textSize="34px" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="@dimen/H0px"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="@dimen/H40px"
+                            android:layout_weight="1"
+                            android:gravity="center|right">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@mipmap/icon_next_arrow" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_calculator"
+                        android:layout_width="match_parent"
+                        android:layout_height="90px"
+                        android:layout_marginTop="@dimen/H20px"
+                        android:background="@color/white"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="@dimen/H0px"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="33px"
+                            android:layout_weight="1"
+                            android:gravity="center|left"
+                            android:orientation="horizontal">
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/H33px"
+                                android:text="计算器"
+                                android:textColor="@color/H2e2e2e"
+                                android:textSize="34px" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="@dimen/H0px"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="@dimen/H40px"
+                            android:layout_weight="1"
+                            android:gravity="center|right">
+
+                            <ImageView
+                                android:id="@+id/imageView3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@mipmap/icon_next_arrow" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/ll_qa"
+                        android:layout_width="match_parent"
+                        android:layout_height="90px"
+                        android:layout_marginTop="@dimen/H20px"
+                        android:background="@color/white"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="@dimen/H0px"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/H33px"
+                            android:layout_weight="1"
+                            android:gravity="center|left"
+                            android:orientation="horizontal">
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/H33px"
+                                android:text="在线QA"
+                                android:textColor="@color/H2e2e2e"
+                                android:textSize="34px" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="@dimen/H0px"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="@dimen/H40px"
+                            android:layout_weight="1"
+                            android:gravity="center|right">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@mipmap/icon_next_arrow" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/ll_usinghelp"
+                        android:layout_width="match_parent"
+                        android:layout_height="90px"
+                        android:layout_marginTop="@dimen/H20px"
+                        android:background="@color/white"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="@dimen/H0px"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/H33px"
+                            android:layout_weight="1"
+                            android:gravity="center|left"
+                            android:orientation="horizontal">
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/H33px"
+                                android:text="使用帮助"
+                                android:textColor="@color/H2e2e2e"
+                                android:textSize="34px" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="@dimen/H0px"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="@dimen/H40px"
+                            android:layout_weight="1"
+                            android:gravity="center|right">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@mipmap/icon_next_arrow" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_aboutUs"
+                        android:layout_width="match_parent"
+                        android:layout_height="90px"
+                        android:layout_marginTop="@dimen/H20px"
+                        android:background="@color/white"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="@dimen/H0px"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/H33px"
+                            android:layout_weight="1"
+                            android:gravity="center|left"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/H33px"
+                                android:text="关于我们"
+                                android:textColor="@color/H2e2e2e"
+                                android:textSize="34px" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="@dimen/H0px"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="@dimen/H40px"
+                            android:layout_weight="1"
+                            android:gravity="center|right">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@mipmap/icon_next_arrow" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/H77px"
+                    android:layout_marginBottom="@dimen/H45px"
+                    android:layout_marginTop="@dimen/H50px">
+
+                    <Button
+                        android:id="@+id/btn_exit"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/H76px"
+                        android:layout_marginBottom="@dimen/H10px"
+                        android:layout_marginLeft="@dimen/H30px"
+                        android:layout_marginRight="@dimen/H30px"
+                        android:text="退出登录"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/H34px" />
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+</LinearLayout>
