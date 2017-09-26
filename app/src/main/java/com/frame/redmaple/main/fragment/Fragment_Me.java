@@ -1,5 +1,6 @@
 package com.frame.redmaple.main.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -12,6 +13,14 @@ import android.widget.TextView;
 import com.example.yaguit.AbViewUtil;
 import com.frame.redmaple.R;
 import com.frame.redmaple.base.common.CommonActivity;
+import com.frame.redmaple.main.activity.Me.RMAboutUsActivity;
+import com.frame.redmaple.main.activity.Me.RMCalculatorActivity;
+import com.frame.redmaple.main.activity.Me.RMCollectionActivity;
+import com.frame.redmaple.main.activity.Me.RMDiaryActivity;
+import com.frame.redmaple.main.activity.Me.RMMyOrderActivity;
+import com.frame.redmaple.main.activity.Me.RMPurchaseActivity;
+import com.frame.redmaple.main.activity.Me.RMQaActivity;
+import com.frame.redmaple.main.activity.Me.RMUsinghelpActivity;
 
 /**
  * Created by Administrator on 2017/9/25.
@@ -61,29 +70,42 @@ public class Fragment_Me extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
+        Intent intent = new Intent();
         switch (view.getId()) {
-
             case R.id.ll_diary:
-
-//                CommonActivity.ToastUtil3.showToast(this,"跳转到日记页面");
+                intent.setClass(getContext(), RMDiaryActivity.class);
+                startActivity(intent);
                 break;
             case R.id.ll_collection:
+                intent.setClass(getContext(), RMCollectionActivity.class);
+                startActivity(intent);
                 break;
             case R.id.ll_purchase:
+                intent.setClass(getContext(), RMPurchaseActivity.class);
+                startActivity(intent);
                 break;
             case R.id.ll_myOrder:
+                intent.setClass(getContext(), RMMyOrderActivity.class);
+                startActivity(intent);
                 break;
             case R.id.ll_calculator:
+                intent.setClass(getContext(), RMCalculatorActivity.class);
+                startActivity(intent);
                 break;
             case R.id.ll_qa:
+                intent.setClass(getContext(), RMQaActivity.class);
+                startActivity(intent);
                 break;
             case R.id.ll_usinghelp:
+                intent.setClass(getContext(), RMUsinghelpActivity.class);
+                startActivity(intent);
                 break;
             case R.id.ll_aboutUs:
+                intent.setClass(getContext(), RMAboutUsActivity.class);
+                startActivity(intent);
                 break;
             default:
                 break;
-
 
         }
     }

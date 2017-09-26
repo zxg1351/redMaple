@@ -313,6 +313,11 @@ public class CommonActivity extends Activity {
         }
     }
 
+    public void onBackPressed(View view) {
+
+        finish();
+    }
+
     /**
      * 返回
      *

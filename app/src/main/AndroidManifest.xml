@@ -42,6 +42,31 @@
         <activity
             android:name=".main.activity.RMHomeActivity"
             android:screenOrientation="portrait"></activity>
+
+        <activity
+            android:name=".main.activity.Me.RMAboutUsActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".main.activity.Me.RMCollectionActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".main.activity.Me.RMCalculatorActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".main.activity.Me.RMDiaryActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".main.activity.Me.RMMyOrderActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".main.activity.Me.RMPurchaseActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".main.activity.Me.RMQaActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".main.activity.Me.RMUsinghelpActivity"
+            android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>
