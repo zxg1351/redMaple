@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import com.example.yaguit.AbViewUtil;
 import com.frame.redmaple.R;
+import com.frame.redmaple.base.util.RecycleViewDivider;
 import com.frame.redmaple.main.adapter.HomeAdapter;
 
 import java.util.ArrayList;
@@ -43,7 +44,7 @@ public class Fragment_Case extends Fragment {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         rv_case.setLayoutManager(linearLayoutManager);
-//        rv_case.addItemDecoration(new I);
+        rv_case.addItemDecoration(new RecycleViewDivider(getContext(), LinearLayoutManager.VERTICAL));
         rv_case.setAdapter(homeAdapter);
         AbViewUtil.scaleContentView((LinearLayout) view.findViewById(R.id.rootLayout));
         return view;
@@ -52,7 +53,7 @@ public class Fragment_Case extends Fragment {
     protected void initData() {
         mDatas = new ArrayList<String>();
         for (int i = 'A'; i < 'z'; i++) {
-            mDatas.add("" + (char) i);
+            mDatas.add("" + (char) i + "案例");
         }
     }
 
