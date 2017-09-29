@@ -31,218 +31,25 @@
             android:background="@color/white"
             android:orientation="vertical">
 
-            <LinearLayout
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_home"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/H78px"
-                android:layout_marginLeft="@dimen/H30px"
-                android:layout_marginRight="@dimen/H30px"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content">
 
-                <LinearLayout
-                    android:layout_width="0px"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center|left"
-                        android:text="放心计划"
-                        android:textColor="@color/K656565"
-                        android:textSize="@dimen/H29px" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="0px"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center|right">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="起投金额："
-                        android:textColor="@color/H000000"
-                        android:textSize="@dimen/H24px" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/H5px"
-                        android:text="1000元"
-                        android:textColor="@color/H000000"
-                        android:textSize="@dimen/H24px" />
-                </LinearLayout>
-
-            </LinearLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/H1px"
-                android:background="@color/Kdedede" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="179px"
-                android:orientation="horizontal">
-
-                <LinearLayout
-                    android:layout_width="0px"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="@dimen/H0px"
-                        android:layout_weight="1"
-                        android:gravity="bottom|center"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="bottom"
-                            android:text="6.8"
-                            android:textColor="@color/HE25E26"
-                            android:textSize="@dimen/H34px" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="bottom"
-                            android:text="%"
-                            android:textColor="@color/HE25E26"
-                            android:textSize="24px" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="@dimen/H0px"
-                        android:layout_weight="1"
-                        android:gravity="center|top"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="8px"
-                            android:text="历史年化收益"
-                            android:textColor="@color/K929292"
-                            android:textSize="@dimen/H20px" />
-                    </LinearLayout>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="0px"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="@dimen/H0px"
-                        android:layout_weight="1"
-                        android:gravity="bottom|center"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="bottom"
-                            android:text="365~1095"
-                            android:textColor="@color/H5883f0"
-                            android:textSize="@dimen/H30px" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="bottom"
-                            android:text="天"
-                            android:textColor="@color/H5883f0"
-                            android:textSize="24px" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="@dimen/H0px"
-                        android:layout_weight="1"
-                        android:gravity="center|top"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="8px"
-                            android:text="出借期限"
-                            android:textColor="@color/K929292"
-                            android:textSize="@dimen/H20px" />
-                    </LinearLayout>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="0px"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="@dimen/H0px"
-                        android:layout_weight="1">
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="@dimen/H0px"
-                        android:layout_weight="1"
-                        android:orientation="horizontal">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:gravity="center">
-
-                            <Button
-                                android:id="@+id/btn_fangxin"
-                                android:layout_width="144px"
-                                android:layout_height="@dimen/H46px"
-                                android:layout_marginBottom="@dimen/H10px"
-                                android:layout_marginTop="@dimen/H10px"
-                                android:text="查看详情"
-                                android:textColor="@color/HFFFFFF"
-                                android:textSize="@dimen/H18px" />
-                        </LinearLayout>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="@dimen/H0px"
-                        android:layout_weight="1">
-
-                    </LinearLayout>
-
-
-                </LinearLayout>
-
-            </LinearLayout>
+            </android.support.v7.widget.RecyclerView>
 
         </LinearLayout>
 
-        <android.support.design.widget.FloatingActionButton
-            android:id="@+id/fab_add_comment"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end|bottom"
-            android:layout_margin="@dimen/fab_margin"
-            android:src="@mipmap/ic_add"
-            app:backgroundTint="#56abe4"
-            app:rippleColor="#56abe4" />
+
     </LinearLayout>
 
-
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_add_comment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="@dimen/fab_margin"
+        android:src="@mipmap/ic_add"
+        app:backgroundTint="#56abe4"
+        app:rippleColor="#56abe4" />
 </LinearLayout>

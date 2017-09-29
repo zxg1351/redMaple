@@ -4,7 +4,8 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.view.ViewPager;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,11 +14,16 @@ import android.widget.TextView;
 
 import com.example.yaguit.AbViewUtil;
 import com.frame.redmaple.R;
+import com.frame.redmaple.base.HomeBean;
+import com.frame.redmaple.base.util.RecycleViewDivider;
 import com.frame.redmaple.base.util.bannerViewPage.RollPagerView;
+import com.frame.redmaple.main.adapter.RMHomeAdapter;
 import com.frame.redmaple.main.adapter.ImageLoopAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static com.frame.redmaple.R.color.Hf10e50;
 
 /**
  * Created by Administrator on 2017/9/25.
@@ -30,6 +36,11 @@ public class Fragment_Home extends Fragment {
     private RollPagerView mViewPager;
     ImageLoopAdapter imageLoopAdapter;
     List<String> imgList = new ArrayList<>();
+    private RecyclerView rv_home;
+    private RMHomeAdapter homeAdapter;
+    private List<String> mDatas;
+    List<Integer> ipImages = new ArrayList<>();
+    HomeBean homeBean = new HomeBean();
 
     public Fragment_Home() {
     }
@@ -55,8 +66,19 @@ public class Fragment_Home extends Fragment {
 
         mViewPager = (RollPagerView) view.findViewById(R.id.vp_image);
         imageLoopAdapter = new ImageLoopAdapter(mViewPager, getContext(), getDatas());
-
         mViewPager.setAdapter(imageLoopAdapter);
+        initData();
+        homeAdapter = new RMHomeAdapter(getContext(), mDatas, getImageList());
+
+//        homeAdapter = new RMHomeAdapter(getContext(), getHomeBean());
+        rv_home = (RecyclerView) view.findViewById(R.id.rv_home);
+
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+        linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        rv_home.addItemDecoration(new RecycleViewDivider(getContext(), LinearLayoutManager.HORIZONTAL, 2, Hf10e50));
+        rv_home.setLayoutManager(linearLayoutManager);
+//        rv_home.setLayoutManager(new GridLayoutManager(getContext(), 3));
+        rv_home.setAdapter(homeAdapter);
     }
 
     public List<String> getDatas() {
@@ -68,4 +90,39 @@ public class Fragment_Home extends Fragment {
         imgList.add("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1490169330545&di=a6050448fe99ebe66ea51ddb72ac4514&imgtype=0&src=http%3A%2F%2Fe.hiphotos.baidu.com%2Fzhidao%2Fpic%2Fitem%2F94cad1c8a786c91743d61a36cb3d70cf3ac757e3.jpg");
         return imgList;
     }
+
+    protected void initData() {
+        mDatas = new ArrayList<String>();
+        for (int i = 'A'; i < 'F'; i++) {
+            mDatas.add("" + (char) i + "图片");
+        }
+    }
+
+    //
+//
+    private List<Integer> getImageList() {
+
+        ipImages.add(R.mipmap.ic_one);
+        ipImages.add(R.mipmap.ic_two);
+        ipImages.add(R.mipmap.ic_three);
+        ipImages.add(R.mipmap.ic_four);
+        ipImages.add(R.mipmap.ic_five);
+        return ipImages;
+    }
+
+//    private List<HomeBean> getHomeBean() {
+//
+//        List<HomeBean> homeBeenList = new ArrayList<>();
+//        mDatas = new ArrayList<String>();
+//        for (int i = 'A'; i < 'E'; i++) {
+//            mDatas.add("" + (char) i + "图片");
+//
+//            ipImages.add(R.mipmap.ic_one);
+//
+//        }
+//        homeBean.setmDatas(mDatas);
+//        homeBean.setIpImages(ipImages);
+//        homeBeenList.add(homeBean);
+//        return homeBeenList;
+//    }
 }
