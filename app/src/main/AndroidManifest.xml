@@ -67,6 +67,9 @@
         <activity
             android:name=".main.activity.Me.RMUsinghelpActivity"
             android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".main.activity.Case.CaseDetailsActivity"
+            android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>

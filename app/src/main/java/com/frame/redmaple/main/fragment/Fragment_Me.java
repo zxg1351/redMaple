@@ -17,6 +17,7 @@ import com.example.yaguit.AbViewUtil;
 import com.frame.redmaple.R;
 import com.frame.redmaple.base.common.CommonActivity;
 import com.frame.redmaple.base.util.RecycleViewDivider;
+import com.frame.redmaple.base.util.bannerViewPage.DividerGridItemDecoration;
 import com.frame.redmaple.main.activity.Me.RMAboutUsActivity;
 import com.frame.redmaple.main.activity.Me.RMCalculatorActivity;
 import com.frame.redmaple.main.activity.Me.RMCollectionActivity;
@@ -64,7 +65,8 @@ public class Fragment_Me extends Fragment implements View.OnClickListener {
         rv_me = (RecyclerView) view.findViewById(R.id.rv_me);
         RMMeAdapter rmMeAdapter = new RMMeAdapter(getContext(), directoryLabelList());
         GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 3, GridLayoutManager.VERTICAL, false);
-        rv_me.addItemDecoration(new RecycleViewDivider(getContext(), LinearLayoutManager.VERTICAL, R.drawable.item_divider));
+//        rv_me.addItemDecoration(new RecycleViewDivider(getContext(), LinearLayoutManager.VERTICAL, R.drawable.item_divider));
+        rv_me.addItemDecoration(new DividerGridItemDecoration(getContext()));
         rv_me.setLayoutManager(gridLayoutManager);
         rv_me.setAdapter(rmMeAdapter);
         setListerner();

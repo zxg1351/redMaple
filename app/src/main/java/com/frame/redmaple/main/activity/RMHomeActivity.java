@@ -25,7 +25,7 @@ public class RMHomeActivity extends FragmentActivity {
     private FragmentManager fragmentManager;
     private FragmentTransaction transaction;
     private FragmentTransaction transactionCase;
-
+    private FragmentTransaction transactionHome;
     private FragmentTransaction transactionMe;
 
 
@@ -42,7 +42,7 @@ public class RMHomeActivity extends FragmentActivity {
 
         if (savedInstanceState == null) {
             Fragment_Home fragment_home = new Fragment_Home();
-            transaction.replace(R.id.ll_fragment, fragment_home);
+            transaction.add(R.id.ll_fragment, fragment_home);
             transaction.addToBackStack(null);
             transaction.commit();
         }
@@ -100,11 +100,11 @@ public class RMHomeActivity extends FragmentActivity {
     //主页
     private void toHome() {
 
-        transaction = fragmentManager.beginTransaction();
+        transactionHome = fragmentManager.beginTransaction();
         Fragment_Home fragment_home = new Fragment_Home();
-        transaction.replace(R.id.ll_fragment, fragment_home);
-        transaction.addToBackStack(null);
-        transaction.commit();
+        transactionHome.replace(R.id.ll_fragment, fragment_home);
+        transactionHome.addToBackStack(null);
+        transactionHome.commit();
 
     }
 

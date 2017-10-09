@@ -26,6 +26,21 @@ public class RMCaseAdapter extends RecyclerView.Adapter<RMCaseAdapter.MyViewHold
         this.data = data;
     }
 
+    public interface OnItemClickLitener {
+
+        void onItemClick(View view, int position);
+
+        void onItemLongClick(View view, int position);
+
+
+    }
+
+    private OnItemClickLitener mOnItemClickLitener;
+
+    public void setmOnItemClickLitener(OnItemClickLitener mOnItemClickLitener) {
+        this.mOnItemClickLitener = mOnItemClickLitener;
+    }
+
     @Override
     public RMCaseAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         MyViewHolder myViewHolder = new MyViewHolder(LayoutInflater.from(mContext).inflate(R.layout.item_case, parent, false));
@@ -35,9 +50,22 @@ public class RMCaseAdapter extends RecyclerView.Adapter<RMCaseAdapter.MyViewHold
     }
 
     @Override
-    public void onBindViewHolder(RMCaseAdapter.MyViewHolder holder, int position) {
+    public void onBindViewHolder(final RMCaseAdapter.MyViewHolder holder, int position) {
 
         holder.textView.setText(data.get(position));
+
+
+        if (mOnItemClickLitener != null) {
+
+
+            holder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    int pos = holder.getLayoutPosition();
+                    mOnItemClickLitener.onItemClick(holder.itemView, pos);
+                }
+            });
+        }
 
     }
 
