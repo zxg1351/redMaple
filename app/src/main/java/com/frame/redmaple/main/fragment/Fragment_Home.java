@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.yaguit.AbViewUtil;
@@ -19,6 +20,7 @@ import com.frame.redmaple.base.util.RecycleViewDivider;
 import com.frame.redmaple.base.util.bannerViewPage.RollPagerView;
 import com.frame.redmaple.main.adapter.RMHomeAdapter;
 import com.frame.redmaple.main.adapter.ImageLoopAdapter;
+import com.frame.redmaple.main.adapter.RaiseAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,11 +38,12 @@ public class Fragment_Home extends Fragment {
     private RollPagerView mViewPager;
     ImageLoopAdapter imageLoopAdapter;
     List<String> imgList = new ArrayList<>();
-    private RecyclerView rv_home;
+    //    private RecyclerView rv_home;
     private RMHomeAdapter homeAdapter;
     private List<String> mDatas;
     List<Integer> ipImages = new ArrayList<>();
     HomeBean homeBean = new HomeBean();
+    private ListView lv_view;
 
     public Fragment_Home() {
     }
@@ -54,8 +57,6 @@ public class Fragment_Home extends Fragment {
         tv_title.setText("首页");
 
         initView(view);
-
-
         AbViewUtil.scaleContentView((LinearLayout) view.findViewById(R.id.rootLayout));
         return view;
 
@@ -68,17 +69,17 @@ public class Fragment_Home extends Fragment {
         imageLoopAdapter = new ImageLoopAdapter(mViewPager, getContext(), getDatas());
         mViewPager.setAdapter(imageLoopAdapter);
         initData();
-        homeAdapter = new RMHomeAdapter(getContext(), mDatas, getImageList());
-
+//        homeAdapter = new RMHomeAdapter(getContext(), mDatas, getImageList());
 //        homeAdapter = new RMHomeAdapter(getContext(), getHomeBean());
-        rv_home = (RecyclerView) view.findViewById(R.id.rv_home);
-
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
-        linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-        rv_home.addItemDecoration(new RecycleViewDivider(getContext(), LinearLayoutManager.HORIZONTAL, 2, Hf10e50));
-        rv_home.setLayoutManager(linearLayoutManager);
+//        rv_home = (RecyclerView) view.findViewById(R.id.rv_home);
+        lv_view = (ListView) view.findViewById(R.id.lv_view);
+        RaiseAdapter raiseAdapter = new RaiseAdapter(getContext(), mDatas, getImageList());
+//        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+//        linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+//        lv_view.addItemDecoration(new RecycleViewDivider(getContext(), LinearLayoutManager.HORIZONTAL, 2, Hf10e50));
+//        lv_view.setLayoutManager(linearLayoutManager);
 //        rv_home.setLayoutManager(new GridLayoutManager(getContext(), 3));
-        rv_home.setAdapter(homeAdapter);
+        lv_view.setAdapter(raiseAdapter);
     }
 
     public List<String> getDatas() {
@@ -102,11 +103,16 @@ public class Fragment_Home extends Fragment {
 //
     private List<Integer> getImageList() {
 
-        ipImages.add(R.mipmap.ic_one);
-        ipImages.add(R.mipmap.ic_two);
-        ipImages.add(R.mipmap.ic_three);
-        ipImages.add(R.mipmap.ic_four);
-        ipImages.add(R.mipmap.ic_five);
+//        ipImages.add(R.mipmap.ic_one);
+//        ipImages.add(R.mipmap.ic_two);
+//        ipImages.add(R.mipmap.ic_three);
+//        ipImages.add(R.mipmap.ic_four);
+//        ipImages.add(R.mipmap.ic_five);
+        ipImages.add(R.mipmap.ic_launcher);
+        ipImages.add(R.mipmap.ic_launcher);
+        ipImages.add(R.mipmap.ic_launcher);
+        ipImages.add(R.mipmap.ic_launcher);
+        ipImages.add(R.mipmap.ic_launcher);
         return ipImages;
     }
 
