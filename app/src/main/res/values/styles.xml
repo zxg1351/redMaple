@@ -48,7 +48,7 @@
     </style>
 
     <!--<style name="CustomCheckBoxTheme1" parent="@android:style/Widget.CompoundButton.CheckBox">-->
-        <!--<item name="android:button">@drawable/bac_checkbox1</item>-->
+    <!--<item name="android:button">@drawable/bac_checkbox1</item>-->
     <!--</style>-->
     <!--<style name="kd004BoxTheme" parent="@android:style/Widget.CompoundButton.CheckBox">-->
     <!--<item name="android:button">@drawable/bac_kd004checkbox</item>-->
@@ -91,6 +91,7 @@
         </item>
         <item name="android:progressDrawable">@drawable/shape_progressbar_mini</item>
     </style>
+
     <style name="StyleProgressBarAnother" parent="@android:style/Widget.ProgressBar.Horizontal">
         <item name="android:maxHeight">50dip</item>
         <item name="android:minHeight">10dip</item>
@@ -113,5 +114,14 @@
 
     <style name="CustomCheckboxTheme" parent="@android:style/Widget.CompoundButton.CheckBox">
         <item name="android:button">@drawable/checkbox_style</item>
+    </style>
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
     </style>
 </resources>

@@ -8,4 +8,7 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">案例</string>
     <string name="title_notifications">我的</string>
+
+    <string name="drawer_open">open</string>
+    <string name="drawer_close">close</string>
 </resources>
